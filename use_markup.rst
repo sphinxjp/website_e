@@ -2,11 +2,17 @@
 Make document more powerful
 ===========================
 
+..
+  Sphinxには様々なマークアップがあります。これを利用すると、見やすく情報量の豊富なドキュメントを作ることができます。
+
 Sphinx has various kind of markups. By using these, you can make
 document easily viewable and useful.
 
 Inline markup
 ======================
+
+..
+   太字、斜体、リテラルなどが利用できます。
 
 There are some simple markups.
 
@@ -23,14 +29,22 @@ There are some simple markups.
 Code block
 ==============
 
-ライセンス文の表記や、ソースファイルなどをドキュメント中で表現する、コードブロックがあります。コロンは前の段落の末尾に付けることもできます。また、ブロックの前後には空行を入れてください。
+..
+  ライセンス文の表記や、ソースファイルなどをドキュメント中で表現する、コードブロックがあります。コロンは前の段落の末尾に付けることもできます。また、ブロックの前後には空行を入れてください。
+
+
+There is an Code block which describe licenses or source code in the
+document. Colon can be add previous Paragraphs. Empty lines should be
+inserted around code block.
+
 
 .. code-block:: rst
 
    ::
 
       This document is a fiction. 
-      登場する人物、企業名は架空のものです。
+      All characters and companies in this document are fictional.
+
 
 ソースコードを入れる場合には、言語名を指定することで、コードハイライトが行えるディレクティブがあります。Pygmentsというライブラリを利用しているため、日常使われるプログラミング言語やマークアップなどはかなり網羅しています。
 
@@ -47,21 +61,23 @@ There are bullet lists, enumerated list, difinition lists.
 
 .. code-block:: rst
 
-   * 宇都宮市
-   * 那須塩原市
-   * 真岡市
+   * New York
+   * San Francisco
+   * San Jose
 
-   1. まさし
-   2. みんみん
-   #. 夢餃子(#を使うと、自動で数字が割り当てられます)
+   1. Zushi Puzzle
+   2. Sushi Zone
+   #. Ushiwakamaru (#. for auto-numbering)
 
-   餃子
-      宇都宮の名物として有名。餃子の像もある。静岡の浜松がライバル。
-   ジャズ
-      宇都宮はジャズの町としても売り出し中。
-      楽器メーカーを多数抱える静岡の浜松がライバル
-   焼きそば
-      知る人ぞ知る宇都宮の名物。専門店多数。なぜかビニール袋で持ち帰る。
+   Sushi
+      Sushi is a Japanese food consisting of cooked vinegared rice (shari)
+      combined with other ingredients (neta), usually raw fish or
+      other seafood.
+   Udon
+      Udon is a type of thick wheat-flour noodle of Japanese cuisine.
+   Japanese Curry
+      Japanese Curry is one of the most popular dishes in Japan, where
+      people eat it an average of 84 times a year.
 
 
 Table
@@ -72,20 +88,20 @@ There are some ways to make table.
 Most complicated way
 ----------------------------
 
-縦横のセルの連結も表現できます。
+Grid tables allow arbitrary cell contents (body elements), and both
+row and column spans.
 
 .. code-block:: rst
 
    +---------------------+
-   |栃木県内の勉強会     |
+   |Tutorials            |
    +========+============+
-   |宇都宮  |集合知勉強会|
-   +        +------------+
-   |        |Objective-C |
+   |Light   |Python      |
+   +Weight  +------------+
+   |        |Ruby        |
    +--------+------------+
-   |西那須野|とちぎRuby  |
+   |Compile |Objective-C |
    +--------+------------+
-
 
 Second complicated way
 --------------------------
@@ -93,16 +109,23 @@ Second complicated way
 .. code-block:: rst
 
    =========== ==================================
-   勉強会で使う本
+   Books for Languages
    ----------------------------------------------
-   言語        本の名前
+   Lang        Book title
    =========== ==================================
-   Ruby        dRubyによる分散・Webプログラミング
-   Python      集合知プログラミング
-   Objective-C 詳解Objective-C 2.0
+   Ruby        The dRuby Book
+   Python      Programming Python
+   Objective-C Programming in Objective-C
    =========== ==================================
 
-これ以外にもディレクティブを使った方法がいくつかあります。詳細は :ref:`directives` を参照してください。
+..
+
+  これ以外にもディレクティブを使った方法がいくつかあります。詳細は :ref:`directives` を参照してください。
+
+There are some other ways using directives. See the :ref:`directives`
+for more detail.
+
+
 
 Directives
 ==============
@@ -117,7 +140,7 @@ Sphinxが利用しているreStructuredTextのもっとも特徴的な機能が�
 
    .. Directive-name:: Option
       :arguments: 
-      :パラメータ付き引数: parameters
+      :arguments with parameter: parameters
 
       contents
 

@@ -4,22 +4,34 @@
 Introduce directives
 ====================
 
-このドキュメントではreStructuredTextパーサで実装されているディレクティブについて説明します。
+..
+  このドキュメントではreStructuredTextパーサで実装されているディレクティブについて説明します。
 
-ディレクティブは下記の構文です。::
+This document describes about directives which is implemented in the
+reStructuredText parser.
 
-   +-------+---------------------------------------------------+
-   | ".. " | ディレクティブタイプ "::" ディレクティブブロック  |
-   +-------+                                                   |
-           |                                                   |
-           +---------------------------------------------------+
+Syntax diagram::
 
-ディレクティブは明示的なマークアップ（二つのピリオドとスペース）からはじめ、ディレクティブタイプと二つのコロン（まとめて"ディレクティブマーカー"）が続きます。
-ディレクティブブロックは、ディレクティブマーカーのすぐ後からはじまり、その後の全てのインデント行が含まれます。
-ディレクティブブロックは、引数、オプション（フィールドリスト）、そしてコンテンツ
-に分けられ、そのいずれもが現れるかもしれません。
-構文の詳細は、 `reStructuredText Markup Specification`_ のDirectives sectionを参照してください。
+   +-------+--------------------------------------+
+   | ".. " | directive type "::" directive block  |
+   +-------+                                      |
+           |                                      |
+           +--------------------------------------+
 
+..
+  ディレクティブは明示的なマークアップ（二つのピリオドとスペース）からはじめ、ディレクティブタイプと二つのコロン（まとめて"ディレクティブマーカー"）が続きます。ディレクティブブロックは、ディレクティブマーカーのすぐ後からはじまり、その後の全てのインデント行が含まれます。
+  ディレクティブブロックは、引数、オプション（フィールドリスト）、そしてコンテンツに分けられ、そのいずれもが現れるかもしれません。構文の詳細は、 `reStructuredText Markup Specification`_ のDirectives sectionを参照してください。
+
+Directives are indicated by an explicit markup start (".. ") followed
+by the directive type, two colons, and whitespace (together called the
+"directive marker"). 
+
+The directive block is consists of any text on the first line of the
+directive after the directive marker, and any subsequent indented
+text.
+
+More detail about directives, see Directives section of
+`reStructuredText Markup Specification`_.
 
 Warning
 ========
@@ -29,9 +41,9 @@ Warning specification
 
 :Directive Type:  "attention", "caution", "danger", "error", "hint", "important", "note", "tip", "warning", "admonition"
 :Doctree Element:  attention, caution, danger, error, hint, important, note, tip, warning, admonition, title
-:Directive Arguments:  無し
-:Directive Options:  指定不可
-:Directive 本文: 本文要素として解釈されます
+:Directive arguments:  無し
+:Directive options:  指定不可
+:Directive content: 本文要素として解釈されます
 
 
 警告は本文要素のどこにでも現れることができる特に際立った"topics"です。
